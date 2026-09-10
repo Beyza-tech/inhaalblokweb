@@ -40,10 +40,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Homepagina
+  
   <img src="readme-images/Homepagina.jpeg" width="375px" alt="Homepagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   Het assortiment 
+  
   <img src="readme-images/Assortiment.jpeg" width="375px" alt="Het assortiment">
  
 </details>
@@ -73,7 +75,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### van de tweede pagina: 
   <img src="readme-images/Breakdownschets2.png" width="375px" alt="breakdown van een dynamisch deel">
 
-De rest is hetzelfde als pagina 1.
+De rest is hetzelfde als pagina 1
 </details>
 
 
@@ -92,11 +94,11 @@ De rest is hetzelfde als pagina 1.
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | Michelle       | Lois               | Abdenour     | Beyza            |
-  | ---            | ---                | ---          | ---              |
-  | Breakdownschets| Breakdownschets    | Checklist    | Breakdown p.2    |
-  | Animaties      |                    | Website      | Oude html
-  |                |                    | goedkeuring  |                  |
+  | Michelle       | Lois               | Abdenour           | Beyza            |
+  | ---            | ---                | ---                | ---              |
+  | Breakdownschets| Breakdownschets    | Checklist          | Breakdown p.2    |
+  | Animaties      |                    | Website goedkeuring| Oude html
+  |                |                    |                    |                  |
 
 
   ### Verslag van meeting
