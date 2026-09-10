@@ -97,8 +97,7 @@ De rest is hetzelfde als pagina 1
   | Michelle       | Lois               | Abdenour           | Beyza            |
   | ---            | ---                | ---                | ---              |
   | Breakdownschets| Breakdownschets    | Checklist          | Breakdown p.2    |
-  | Animaties      |                    | Website goedkeuring| Oude html
-  |                |                    |                    |                  |
+  | Animaties      |                    | Website goedkeuring| Oude html        |
 
 
   ### Verslag van meeting
