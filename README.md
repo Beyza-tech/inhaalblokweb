@@ -16,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Beyza Deniz
 
   #### Je startniveau:
-  hier je startniveau (kies uit zwart, rood óf blauw)
+  Blauw
 
   #### Je focus:
-  hier je focus (kies uit responsive óf surface plane)
+  Responsive
  
 </details>
 
@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  lhttps://www.febo.nl/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  Homepagina
+  <img src="readme-images/Homepagina.jpeg" width="375px" alt="Homepagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  Het assortiment 
+  <img src="readme-images/Assortiment.jpeg" width="375px" alt="Het assortiment">
  
 </details>
 
@@ -73,6 +73,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### van de tweede pagina: 
   <img src="readme-images/Breakdownschets2.png" width="375px" alt="breakdown van een dynamisch deel">
 
+De rest is hetzelfde als pagina 1.
 </details>
 
 
@@ -85,26 +86,25 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Ik was een beetje in de war met mijn oude html en nieuwe html aan de hand van mijn breakdownschets die ik hiervoor nog niet had gemaakt. 
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
+  | Michelle       | Lois               | Abdenour     | Beyza            |
   | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | Breakdownschets| Breakdownschets    | Checklist    | Breakdown p.2    |
+  | Animaties      |                    | Website      | Oude html
+  |                |                    | goedkeuring  |                  |
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik ga mijn oude html aanpassen aan de hand van mijn breakdownschets, want die was al goedgekeurd
+  - Ik kan beter mijn code opnieuw schrijven
+  - Dinsdag kan ik feedback krijgen op mijn html van beide pagina's
 
 </details>
 
