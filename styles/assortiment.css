@@ -1,0 +1,270 @@
+/****************/
+/* Hero: titel en foto */
+/****************/
+
+/* de hero over de volle breedte; anker voor de titel
+   bron: FED 25/26 5 Flavours of positioneren, slide "De h3 rechtsboven" */
+main > section {
+	grid-column: 1 / -1;
+	position: relative;
+	margin-inline: -1rem;
+}
+
+/* de foto: donkerder, zodat de witte titel leesbaar is */
+main > section img {
+	width: 100%;
+	height: 15rem;
+	object-fit: cover;
+	filter: brightness(0.6);
+}
+
+/* de titel wit en in het midden óp de foto */
+main > section h1 {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	margin: 0;
+	color: var(--color-text-on-image);
+	font-size: 2.5rem;
+}
+
+
+
+/****************/
+/* Categorielijst (carousel met pijltjes) */
+/****************/
+
+/* carousel: categorieën naast elkaar, opzij scrollen en snappen
+   bron: FED 25/26 flexbox-oefening 4 carousel, stap 1 */
+main > ul {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	overscroll-behavior-x: contain;
+	gap: 0rem;
+	scrollbar-width: none;
+	list-style: none;
+	margin: 1.5rem 0rem;
+	padding: 1.5rem 0rem;
+	border: thin solid var(--color-tab);
+	background-color: var(--color-card);
+}
+
+/* één categorie: plaatje en naam onder elkaar, 2,5 in beeld */
+/* één categorie per klik, zoals op febo.nl
+   bron: MDN - scroll-snap-stop */
+main > ul li {
+	flex-basis: 33.33%;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	scroll-snap-stop: always;
+}
+
+/* het plaatje klein en even hoog */
+main > ul img {
+	height: 4rem;
+	object-fit: contain;
+}
+
+/* de naam: vet en in de tekstkleur, niet rood */
+main > ul h2 {
+	font-size: 1rem;
+	color: var(--color-text);
+	margin: 0.5rem 0 0;
+}
+
+/* main is het "anker" voor de pijltjes
+   bron: FED 25/26 5 Flavours of positioneren, slide "De h3 rechtsboven" */
+main {
+	position: relative;
+}
+
+/* de pijltjes: rode rondjes, op de rand van de lijst
+   bron: FED 25/26 flexbox-oefening 4 carousel, stap 2 (chrome.dev/carousel-configurator) */
+main > ul::scroll-button(*) {
+	position: absolute;
+	top: 21rem;
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 50%;
+	font-size: 1.25rem;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-red-dark);
+	cursor: pointer;
+}
+
+/* pijltje naar links */
+main > ul::scroll-button(left) {
+	content: "‹" / "Vorige categorieën";
+	left: 0;
+}
+
+/* pijltje naar rechts */
+main > ul::scroll-button(right) {
+	content: "›" / "Volgende categorieën";
+	right: 0;
+}
+
+/* pijltje zwart bij hover of toetsenbord-focus, zoals op febo.nl */
+main > ul::scroll-button(*):hover,
+main > ul::scroll-button(*):focus-visible {
+	background-color: var(--color-black);
+}
+
+/* naam van de categorie rood bij hover, zoals op febo.nl
+   (alleen uiterlijk: het filter heb ik bewust niet werkend gemaakt) */
+main > ul li:hover h2 {
+	color: var(--color-heading);
+}
+
+
+
+/****************/
+/* Productkaarten */
+/****************/
+
+/* main: twee kolommen voor de kaarten, ruimte aan de zijkant */
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	padding-inline: 1rem;
+	padding-block-end: 3rem;
+	position: relative;
+}
+
+/* de categorielijst over de volle breedte, boven de kaarten */
+main > ul {
+	grid-column: 1 / -1;
+}
+
+/* één kaart: wit vlak met dun randje, anker voor het info-icoon */
+main > article {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-card);
+	border: thin solid var(--color-tab);
+	padding-block-end: 1rem;
+}
+
+/* de productfoto: allemaal even hoog, helemaal zichtbaar */
+main > article > img {
+	height: 9rem;
+	object-fit: cover;
+	width: 100%;
+}
+
+/* de productnaam in rode schrijfletter */
+main > article h3 {
+	font-family: 'SignPainter-HouseScript', cursive;
+	font-size: 1.75rem;
+	margin: 0.5rem 0.75rem 0;
+	font-weight: normal;
+}
+
+/* de beschrijving iets kleiner */
+main > article p {
+	font-size: 0.8rem;
+	margin: 0 0.75rem;
+}
+
+/* het info-icoon rechtsboven in de kaart
+   bron: FED 25/26 5 Flavours of positioneren, slide "De h3 rechtsboven" */
+main > article button {
+	position: absolute;
+	top: 0rem;
+	right: 0rem;
+	padding: 0.5rem;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+main > article button img {
+	width: 1.5rem;
+}
+
+/* info-icoon rood bij hover of toetsenbord-focus, zoals op febo.nl
+   bron: MDN - content */
+main > article button:hover img,
+main > article button:focus-visible img {
+	content: url('../images/icons/circle-info-solid-full-red.svg');
+}
+
+/* in dark mode het zwarte icoon wit maken, anders zie je het niet;
+   bij hover het rode icoon niet omkeren */
+@media (prefers-color-scheme: dark) {
+	main > article button img {
+		filter: invert(1);
+	}
+
+	main > article button:hover img,
+	main > article button:focus-visible img {
+		filter: none;
+	}
+}
+
+/****************/
+/* Groot scherm (laptop en groter) */
+/****************/
+
+@media (min-width: 64em) {
+
+	/* main: inhoud niet tegen de rand, vier kolommen voor de kaarten
+	   bron: MDN - CSS grid layout */
+	main {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		padding-inline: 10rem;
+	}
+
+	/* hero: hoger, en toch over de volle breedte (tegen de padding van main in) */
+	main > section {
+		margin-inline: -10rem;
+	}
+
+	main > section img {
+		height: 19rem;
+	}
+
+	main > section h1 {
+		font-size: 5rem;
+	}
+
+	/* categorieën: vijf in beeld, zodat de pijltjes nog iets te doen hebben */
+	main > ul li {
+		flex-basis: 20%;
+	}
+
+	/* pijltjes op de rand van de categorielijst, in het midden van de plaatjes */
+	main > ul::scroll-button(*) {
+		top: 25rem;
+	}
+
+	main > ul::scroll-button(left) {
+		left: 10.5rem;
+	}
+
+	main > ul::scroll-button(right) {
+		right: 10.5rem;
+	}
+
+	/* productfoto's hoger en helemaal zichtbaar, zoals op febo.nl */
+	main > article > img {
+		height: 15rem;
+		object-fit: contain;
+	}
+
+	/* productnaam groter */
+	main > article h3 {
+		font-size: 2.25rem;
+	}
+}

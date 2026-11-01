@@ -1,0 +1,643 @@
+/****************/
+/* Hero: foto, kop en bestelformulier */
+/****************/
+
+/* hero: foto met kop en formulier, vult het eerste scherm */
+main > section:first-of-type {
+	min-height: 100dvh;
+	padding-block-start: 3rem;
+	background-image: url('../images/home/achtergrondfoto.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+/* kop op de hero-foto */
+main > section:first-of-type h2 {
+	font-family: 'SignPainter-HouseScript', cursive;
+	color: var(--color-text-on-image);
+	text-align: center;
+	font-size: 3.2rem;
+	font-weight: normal;
+}
+
+/* bestelformulier: wit blok op de foto */
+main > section:first-of-type form {
+	background-color: var(--color-card);
+	padding-block-end: 1.5rem;
+	margin-inline: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+/* alle onderdelen van het formulier over de volle breedte */
+main > section:first-of-type form > * {
+	flex-basis: 100%;
+}
+
+/* alles in het formulier ruimte aan de zijkant, behalve de tabbladen */
+main > section:first-of-type form > :not(label:has(input[type="radio"])) {
+	margin-inline: 1.5rem;
+}
+
+/* bezorgen en afhalen als tabbladen: grijs vlak, tekst in het midden
+   bron: FED 25/26 :has() intro, slide "Kind met attribuut" */
+main > section:first-of-type form > label:has(input[type="radio"]) {
+	flex: 1;
+	padding: 0.75rem;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: var(--color-tab);
+	cursor: pointer;
+}
+
+/* het gekozen tabblad: wit en vet
+   bron: FED 25/26 :has() intro, slide "Kind met status 2/3" */
+main > section:first-of-type form > label:has(input[type="radio"]:checked) {
+	font-weight: 700;
+	background-color: var(--color-card);
+}
+
+/* het rondje van de radio button verbergen, hij blijft wel werken */
+main > section:first-of-type form input[type="radio"] {
+	appearance: none;
+	margin: 0;
+}
+
+/* zichtbare rand als je met het toetsenbord op een tabblad staat */
+main > section:first-of-type form > label:has(input[type="radio"]:focus-visible) {
+	outline: 0.2rem solid var(--color-febo-green-dark);
+}
+
+/* label van het postcodeveld: tekst boven het invoerveld
+   bron: FED 25/26 :has() intro, slide "Kind met attribuut" */
+main > section:first-of-type form label:has(input[required]) {
+	display: flex;
+	flex-direction: column;
+}
+
+/* invoerveld voor de postcode */
+main > section:first-of-type form input[type="text"] {
+	padding: 0.75rem;
+	border: 0.1rem solid var(--color-febo-red);
+	font: inherit;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/* zoekknop: groen */
+main > section:first-of-type form button {
+	padding: 0.75rem;
+	border: none;
+	font: inherit;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-green-dark);
+}
+
+/* tekst onderaan het formulier: icoon en tekst naast elkaar, in het midden */
+main > section:first-of-type form > p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* het vinkje-icoon */
+main > section:first-of-type form > p img {
+	width: 1.2rem;
+}
+
+
+/****************/
+/* Werken bij en zelf ondernemen */
+/****************/
+
+/* de section: de twee kaarten onder elkaar met ruimte ertussen */
+/* boven 4rem, links en rechts 1rem, onder 1.5rem */
+main > section:nth-of-type(2) {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin: 4rem 1rem 1.5rem;
+}
+
+/* één kaart: wit vlak met dun randje, inhoud onder elkaar */
+main > section:nth-of-type(2) article {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-card);
+	border: thin solid var(--color-tab);
+	padding-block-end: 1.5rem;
+	flex: 1 1 25rem;
+}
+
+/* de foto bovenaan de kaart */
+main > section:nth-of-type(2) article img {
+	order: -1;
+	order: -1;
+	width: 100%;
+	height: 12rem;
+	object-fit: cover;
+}
+
+/* kop, tekst en knop: ruimte links en rechts */
+main > section:nth-of-type(2) article h3,
+main > section:nth-of-type(2) article p,
+main > section:nth-of-type(2) article a {
+	margin-inline: 1.5rem;
+}
+
+/* minder ruimte onder de kop */
+main > section:nth-of-type(2) article h3 {
+	margin-block-end: 0.5rem;
+}
+
+/* tekst in de kaart iets kleiner */
+main > section:nth-of-type(2) article p {
+	font-size: 0.9rem;
+	margin-block-start: 0;
+}
+
+/* de link "meer informatie" als rode knop */
+main > section:nth-of-type(2) article a {
+	align-self: flex-start;
+	padding: 0.75rem 1.5rem;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-red-dark);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
+
+/****************/
+/* Ons assortiment */
+/****************/
+
+/* de section: ruimte rondom, kop en tekst in het midden,
+   en het "anker" voor de pijltjes
+   bron: FED 25/26 5 Flavours of positioneren, slide "De h3 rechtsboven" */
+main > section:nth-of-type(3) {
+	position: relative;
+	margin: 3rem 1rem 1.5rem;
+	text-align: center;
+}
+
+/* kop "Ons assortiment" groter */
+main > section:nth-of-type(3) > h2 {
+	font-size: 2.5rem;
+	margin-block-end: 0.5rem;
+}
+
+/* introtekst iets kleiner */
+main > section:nth-of-type(3) > p {
+	font-size: 0.85rem;
+	margin-block-end: 1.5rem;
+}
+
+/* carousel: producten naast elkaar, horizontaal scrollen en snappen
+   bron: FED 25/26 flexbox-oefening 4 carousel, stap 1
+   codepen.io/shooft/pen/vENdvzK */
+main > section:nth-of-type(3) ul {
+	display: flex;
+	overflow: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	/* zodat je niet per ongeluk 'back' scrollt */
+	overscroll-behavior-x: contain;
+	gap: 1rem;
+	/* dunne scrollbar in de huisstijlkleur */
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-febo-red) transparent;
+	/* standaard lijst-opmaak weg */
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* één product: twee naast elkaar, met een stukje van het volgende in beeld;
+   één product per klik (bron: MDN - scroll-snap-stop) */
+main > section:nth-of-type(3) li {
+	flex-basis: 45%;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+
+/* inhoud van een product onder elkaar, in het midden */
+main > section:nth-of-type(3) article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* de foto bovenaan; alle productfoto's even hoog, zodat de tekst op één lijn staat */
+main > section:nth-of-type(3) article img {
+	order: -1;
+	height: 10rem;
+	object-fit: contain;
+}
+
+/* productnaam: weinig ruimte erboven en eronder */
+main > section:nth-of-type(3) article h3 {
+	margin-block: 0.5rem 0;
+}
+
+/* korte tekst iets kleiner */
+main > section:nth-of-type(3) article p {
+	font-size: 0.9rem;
+	margin-block: 0.25rem;
+}
+
+/* de link "product informatie": rood, klein en niet onderstreept */
+main > section:nth-of-type(3) article a {
+	color: var(--color-heading);
+	font-size: 0.9rem;
+	text-decoration: none;
+}
+
+/* de pijltjes: rode rondjes, links en rechts van de producten
+   bron: FED 25/26 flexbox-oefening 4 carousel, stap 2 (chrome.dev/carousel-configurator) */
+main > section:nth-of-type(3) ul::scroll-button(*) {
+	position: absolute;
+	top: 60%;
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 50%;
+	font-size: 1.25rem;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-red-dark);
+	cursor: pointer;
+}
+
+main > section:nth-of-type(3) ul::scroll-button(left) {
+	content: "‹" / "Vorige producten";
+	left: 0;
+}
+
+main > section:nth-of-type(3) ul::scroll-button(right) {
+	content: "›" / "Volgende producten";
+	right: 0;
+}
+
+/* pijltje zwart bij hover of toetsenbord-focus, zoals op febo.nl */
+main > section:nth-of-type(3) ul::scroll-button(*):hover,
+main > section:nth-of-type(3) ul::scroll-button(*):focus-visible {
+	background-color: var(--color-black);
+}
+
+/****************/
+/* Elke dag vers gemaakt */
+/****************/
+
+/* rood vlak met witte tekst in het midden */
+main > section:nth-of-type(4) {
+	margin-block-start: 3rem;
+	padding: 1.5rem 0 0;
+	text-align: center;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-red-dark);
+}
+
+/* de tekst ruimte aan de zijkant, de foto loopt door tot de rand */
+main > section:nth-of-type(4) p {
+	margin-inline: 1rem;
+	font-size: 0.85rem;
+}
+
+/* de foto hoger afbeelden */
+main > section:nth-of-type(4) img {
+	width: 100%;
+	height: 40rem;
+	object-fit: cover;
+}
+
+/* "Elke dag" in schrijfletter, wit */
+main > section:nth-of-type(4) h2 {
+	font-family: 'SignPainter-HouseScript', cursive;
+	font-size: 3.2rem;
+	color: var(--color-text-on-red);
+	margin: 0;
+	font-weight: normal;
+}
+
+/* "Vers gemaakt!" wit */
+main > section:nth-of-type(4) h3 {
+	color: var(--color-text-on-red);
+	margin-block: 0 0.5rem;
+	font-size: 1.75rem;
+}
+
+/* de link "bekijk onze producten" als knop met een witte rand */
+main > section:nth-of-type(4) a {
+	display: inline-block;
+	margin-block: 0.5rem 1.5rem;
+	padding: 0.75rem 1.5rem;
+	border: thin solid var(--color-text-on-red);
+	color: var(--color-text-on-red);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/****************/
+/* Nieuw! Grillburgersaus */
+/****************/
+
+/* ruimte rondom, alles in het midden */
+main > section:nth-of-type(5) {
+	margin: 3rem 1rem 1.5rem;
+	text-align: center;
+}
+
+/* "Nieuw!" in schrijfletter */
+main > section:nth-of-type(5) h2 {
+	font-family: 'SignPainter-HouseScript', cursive;
+	font-size: 3.2rem;
+	margin: 0;
+	color: var(--color-text);
+	line-height: 1;
+	font-weight: normal;
+}
+
+/* "Grillburgersaus" */
+main > section:nth-of-type(5) h3 {
+	font-size: 1.75rem;
+	margin-block: 0 0.5rem;
+}
+
+/* de tekst iets kleiner */
+main > section:nth-of-type(5) p {
+	font-size: 0.85rem;
+}
+
+/* de foto van de saus in het midden */
+main > section:nth-of-type(5) img {
+	margin-inline: auto;
+}
+
+/****************/
+/* Nieuws */
+/****************/
+
+/* de section: ruimte rondom, de artikelen onder elkaar */
+main > section:nth-of-type(6) {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin: 3rem 1rem 1.5rem;
+}
+
+/* koppen over de volle breedte, de artikelen naast elkaar zodra ze passen */
+main > section:nth-of-type(6) h2,
+main > section:nth-of-type(6) h3 {
+	flex-basis: 100%;
+}
+
+main > section:nth-of-type(6) article {
+	flex: 1 1 18rem;
+}
+
+/* "Nieuws" in schrijfletter */
+main > section:nth-of-type(6) h2 {
+	font-family: 'SignPainter-HouseScript', cursive;
+	font-size: 3.2rem;
+	color: var(--color-text);
+	text-align: center;
+	margin: 0;
+	line-height: 1;
+	font-weight: normal;
+}
+
+/* "FEBO interessant" */
+main > section:nth-of-type(6) h3 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin: 0;
+	margin-block-start: -1rem;
+}
+
+/* één nieuwsartikel: wit vlak met dun randje, inhoud onder elkaar */
+main > section:nth-of-type(6) article {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-card);
+	border: thin solid var(--color-tab);
+	padding-block-end: 1.5rem;
+}
+
+/* de foto bovenaan */
+main > section:nth-of-type(6) article img {
+	order: -2;
+}
+
+/* datum, kop, tekst en link: ruimte links en rechts */
+main > section:nth-of-type(6) article time,
+main > section:nth-of-type(6) article h4,
+main > section:nth-of-type(6) article p,
+main > section:nth-of-type(6) article a {
+	margin-inline: 1.5rem;
+}
+
+/* de datum klein, net boven de kop */
+main > section:nth-of-type(6) article time {
+	order: -1;
+	margin-block-start: 1rem;
+	font-size: 0.8rem;
+}
+
+/* de kop van het artikel rood */
+main > section:nth-of-type(6) article h4 {
+	color: var(--color-heading);
+	margin-block: 0.25rem 0.75rem;
+}
+
+/* de tekst iets kleiner */
+main > section:nth-of-type(6) article p {
+	font-size: 0.85rem;
+	margin-block-start: 0;
+}
+
+/* de link "lees meer": rood, vet, niet onderstreept */
+main > section:nth-of-type(6) article a {
+	color: var(--color-heading);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+/* pijltje achter "lees meer"
+   idee: FED 25/26 :has() intro, slide "tekst toevoegen met ::after" */
+main > section:nth-of-type(6) article a::after {
+	content: " ›" / "";
+}
+
+
+
+
+/****************/
+/* Groot scherm (laptop en groter) */
+/****************/
+
+@media (min-width: 64em) {
+
+	/* hero: ruimte boven en onder */
+	main > section:first-of-type {
+		padding-block: 3rem;
+	}
+
+	/* het formulier niet over de hele breedte */
+	main > section:first-of-type form {
+		max-width: 40rem;
+		margin-inline: auto;
+	}
+
+	/* ===== Werken bij en zelf ondernemen ===== */
+
+	/* de kaarten breder, zoals op febo.nl */
+	main > section:nth-of-type(2) {
+		max-width: 70rem;
+		margin-inline: auto;
+	}
+
+	/* de foto's in de kaarten even hoog */
+	main > section:nth-of-type(2) article img {
+		height: 21rem;
+		object-fit: cover;
+	}
+
+	/* ===== Ons assortiment ===== */
+
+	/* iets smaller, in het midden */
+	main > section:nth-of-type(3) {
+		max-width: 60rem;
+		margin-inline: auto;
+	}
+
+	/* carousel: precies vier producten in beeld */
+	main > section:nth-of-type(3) ul {
+		gap: 0;
+	}
+
+	main > section:nth-of-type(3) li {
+		flex-basis: 25%;
+	}
+
+	/* pijltjes buiten de producten, zoals op febo.nl */
+	main > section:nth-of-type(3) ul::scroll-button(left) {
+		left: -3rem;
+	}
+
+	main > section:nth-of-type(3) ul::scroll-button(right) {
+		right: -3rem;
+	}
+
+	/* ===== Elke dag ===== */
+
+	/* foto links, tekst rechts en in het midden, even hoog als het scherm
+	   lege rijen boven en onder de tekst (1fr) vangen de extra hoogte op
+	   bron: MDN - CSS grid layout */
+	main > section:nth-of-type(4) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto auto auto auto 1fr;
+		min-height: 100dvh;
+		padding: 0;
+	}
+
+	main > section:nth-of-type(4) > * {
+		grid-column: 2;
+	}
+
+	main > section:nth-of-type(4) h2 {
+		grid-row: 2;
+	}
+
+	main > section:nth-of-type(4) h3 {
+		grid-row: 3;
+		font-size: 2.5rem;
+	}
+
+	main > section:nth-of-type(4) p {
+		grid-row: 4;
+		margin-inline: 3rem;
+		max-width: 40rem;
+		justify-self: center;
+	}
+
+	/* de knop niet over de hele breedte, maar in het midden */
+	main > section:nth-of-type(4) a {
+		grid-row: 5;
+		justify-self: center;
+	}
+
+	/* de foto over alle rijen in de linkerkolom */
+	main > section:nth-of-type(4) img {
+		grid-column: 1;
+		grid-row: 1 / -1;
+		height: 100%;
+	}
+
+	/* ===== Nieuw! ===== */
+
+	/* tekst links en in het midden, foto rechts, even hoog als het scherm */
+	main > section:nth-of-type(5) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto auto auto 1fr;
+		min-height: 100dvh;
+		max-width: 70rem;
+		margin-inline: auto;
+	}
+
+	main > section:nth-of-type(5) > * {
+		grid-column: 1;
+	}
+
+	main > section:nth-of-type(5) h2 {
+		grid-row: 2;
+	}
+
+	main > section:nth-of-type(5) h3 {
+		grid-row: 3;
+		font-size: 2.5rem;
+	}
+
+	main > section:nth-of-type(5) p {
+		grid-row: 4;
+	}
+
+	/* de saus rechts, verticaal in het midden */
+	main > section:nth-of-type(5) img {
+		grid-column: 2;
+		grid-row: 1 / -1;
+		max-width: 100%;
+		justify-self: center;
+		align-self: center;
+	}
+
+	/* ===== Nieuws ===== */
+
+	/* bijna over de volle breedte, zoals op febo.nl */
+	main > section:nth-of-type(6) {
+		max-width: none;
+		margin-inline: 1.5rem;
+	}
+
+	/* grotere kop */
+	main > section:nth-of-type(6) h3 {
+		font-size: 2.5rem;
+	}
+
+	/* nieuwsfoto's even hoog, zodat de datums op één lijn staan */
+	main > section:nth-of-type(6) article img {
+		height: 17rem;
+		object-fit: cover;
+	}
+}

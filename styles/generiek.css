@@ -1,0 +1,492 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* algemeen */
+	--color-text: #111;
+	--color-background: white;
+	--color-card: white;
+	--color-text-on-red: white;
+	--color-heading: #e42e39;
+	--color-text-on-image: white;
+	--color-black: #000;
+	--color-tab: #e6e6e6;
+
+
+	/* huisstijl */
+	--color-febo-red: #e42e39;
+	/* header, footer */
+	--color-febo-red-dark: #c8202b;
+	/* knoppen met witte tekst, contrast 5.67 */
+	--color-febo-red-darker: #640707;
+	/* lijntjes en hover in het menu */
+	--color-febo-green: #009254;
+	--color-febo-green-dark: #007a46;
+
+}
+
+/*donker thema*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: #f2f2f2;
+		--color-background: #1c1a19;
+		--color-card: #2a2725;
+		--color-heading: #f6838b;
+		--color-tab: #3a3634;
+	}
+}
+
+
+/****************/
+/* Basis */
+/****************/
+body {
+	margin: 0;
+	font-family: 'Nunito', Helvetica, Arial, sans-serif;
+	color: var(--color-text);
+	background-color: var(--color-background);
+	line-height: 1.5;
+	padding-block-end: 4rem;
+	/* ruimte onderaan, zodat de vaste bestel direct-balk de footer niet bedekt */
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* koppen in de huisstijlkleur, met weinig ruimte eronder */
+h2,
+h3 {
+	color: var(--color-heading);
+	margin-block-end: 0.5rem;
+}
+
+/* tekst direct onder een kop: geen extra ruimte erboven */
+main p {
+	margin-block-start: 0;
+}
+
+
+/****************/
+/* Toegankelijkheid */
+/****************/
+
+/* visueel verbergen, maar wel voorlezen voor screenreaders
+   bron: The A11Y Project - How-to: Hide content
+   https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/****************/
+/* Skip link */
+/****************/
+
+/* skip link: alleen zichtbaar als je er met Tab op komt
+   bron: The A11Y Project, "How-to: Use skip navigation links" */
+body > a:first-child {
+	position: absolute;
+	z-index: 2;
+	padding: 0.75rem 1.5rem;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-red-dark);
+	translate: 0 -100%;
+}
+
+body > a:first-child:focus {
+	translate: 0;
+}
+
+/****************/
+/* Header */
+/****************/
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: var(--color-febo-red);
+	padding: 0.25rem 1rem;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+/* de menuknop*/
+header button {
+	background: none;
+	border: none;
+}
+
+/* het hamburgerplaatje in de menuknop*/
+header button svg {
+	width: 1.6rem;
+	fill: var(--color-text-on-red);
+	transition: scale 0.2s ease-out;
+}
+
+/* de hamburger wordt platgedrukt bij hover, focus of aantikken, alsof je erin bijt
+   bron: FED 25/26 JS 3-stap recap, slide "transition in 1 slide" */
+header button:hover svg,
+header button:focus-visible svg,
+header button:active svg {
+	scale: 1 0.7;
+}
+
+
+/* het kruisje: standaard verborgen */
+header button img {
+	display: none;
+	width: 2rem;
+}
+
+/* menu open: de hamburger verbergen */
+header button[aria-expanded="true"] svg {
+	display: none;
+}
+
+/* menu open: het kruisje tonen */
+header button[aria-expanded="true"] img {
+	display: block;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-out;
+}
+
+
+/* het logo, in het midden */
+header>a {
+	margin-inline: auto;
+}
+
+header>a img {
+	width: 5rem;
+}
+
+/****************/
+/* nav */
+/****************/
+
+/* het menu op een eigen regel, standaard dicht */
+nav {
+	flex-basis: 100%;
+	display: none;
+}
+
+/* het menu open als JavaScript de class "open" toevoegt */
+/* menu even hoog als het scherm min de header, en scrollbaar als de links er niet in passen (bijv. bij 200% zoom)
+   bron: MDN – overflow-y, MDN – calc(), hulp van Claude */
+nav.open {
+	display: block;
+	height: calc(100dvh - 4rem);
+	animation-name: menuOpenen;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	overflow-y: auto;
+}
+
+/*de lijst in het menu*/
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/*de links in het menu*/
+nav a {
+	display: block;
+	padding: 0.5rem 0;
+	color: var(--color-text-on-red);
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.15rem;
+}
+
+/* menu-link donkerrood bij hover of toetsenbord-focus */
+nav a:hover,
+nav a:focus-visible {
+	color: var(--color-febo-red-darker);
+}
+
+
+/* dun lijntje onder elk menu-item */
+nav li {
+	border-block-end: thin solid var(--color-febo-red-darker);
+}
+
+/* animatie: het menu schuift een stukje omlaag en wordt zichtbaar */
+@keyframes menuOpenen {
+	0% {
+		opacity: 0;
+		translate: 0 -1rem;
+	}
+
+	100% {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+/* geen animaties bij "Reduce Motion"
+   bron: FED 25/26 Animeren intro, slide "Pas ook op" */
+@media (prefers-reduced-motion: reduce) {
+	nav.open {
+		animation-name: none;
+	}
+
+	header button svg {
+		transition: none;
+	}
+}
+
+
+/****************/
+/* Bestel direct */
+/****************/
+
+/* de knop "Bestel direct": groen, wit, in hoofdletters */
+summary {
+	padding: 0.75rem;
+	text-transform: uppercase;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-green-dark);
+	cursor: pointer;
+	font-weight: 700;
+	list-style: none;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* pijltje bij bestel direct */
+summary img {
+	width: 1rem;
+	filter: invert(1);
+	rotate: 180deg;
+}
+
+/* bestel direct altijd onderaan het scherm, de links boven de knop
+   bron: FED 25/26 5 Flavours of positioneren, slide "position: fixed"  */
+details {
+	position: fixed;
+	inset-inline: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 0.75rem 1rem;
+	background-color: var(--color-febo-red);
+}
+
+/* open: het pijltje draait naar beneden */
+details[open] summary img {
+	rotate: 0deg;
+}
+
+/* de lijst met afhalen en bezorgen */
+details ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* de links afhalen en bezorgen, ook als groene knoppen */
+details a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	color: var(--color-text-on-red);
+	background-color: var(--color-febo-green-dark);
+	border-block-end: thin solid var(--color-black);
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+/* zwart vlak als je met de muis of het toetsenbord op afhalen of bezorgen staat */
+details a:hover,
+details a:focus-visible {
+	background-color: var(--color-black);
+}
+
+
+/* bestel direct verbergen als het menu open is
+   bron: FED 25/26 :has() intro, slide "Aanwezigheid kind dan ander kind stylen" */
+body:has(nav.open) details {
+	display: none;
+}
+
+/****************/
+/* Footer */
+/****************/
+
+footer {
+	background-color: var(--color-febo-red);
+	color: var(--color-text-on-red);
+	padding: 2rem 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 2rem;
+}
+
+/* elk blok minstens 12rem breed; er passen er zoveel naast elkaar als er ruimte is */
+footer section {
+	flex: 1 1 12rem;
+}
+
+/* copyright-regel op een eigen regel */
+footer>p {
+	flex-basis: 100%;
+}
+
+/*margin waarden: boven 1.5rem, onder 0.5rem.*/
+footer h3 {
+	color: var(--color-text-on-red);
+	margin-block: 1.5rem 0.5rem;
+}
+
+/* links in de footer niet onderstreept */
+footer a {
+	color: var(--color-text-on-red);
+	text-decoration: none;
+}
+
+/* lijsten in de footer: bolletjes en standaardruimte weg */
+footer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* icoon en tekst naast elkaar */
+footer li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding-block: 0.3rem;
+}
+
+/* iconen kleiner en wit */
+footer img {
+	width: 1.25rem;
+	filter: invert(1);
+}
+
+/* social media iconen naast elkaar */
+footer section:last-of-type ul {
+	display: flex;
+	gap: 1rem;
+}
+
+/* social media: iconen in witte rondjes */
+footer section:last-of-type a {
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background-color: var(--color-text-on-red);
+}
+
+/* icoon in het rondje donker, niet wit */
+footer section:last-of-type img {
+	filter: none;
+}
+
+
+footer li p {
+	margin: 0;
+}
+
+/* bij het adres (met twee regels): icoon bovenaan, naast de straatnaam */
+footer li:has(p) {
+	align-items: flex-start;
+}
+
+footer li:has(p) img {
+	margin-block-start: 0.25rem;
+}
+
+/* Retourneren uitlijnen met de tekst erboven */
+footer section:nth-of-type(2) li:last-child {
+	padding-inline-start: 1.75rem;
+}
+
+/****************/
+/* Groot scherm (laptop en groter) */
+/****************/
+
+/* bron: FED 25/26 flexbox-oefening 3, flexy header */
+@media (min-width: 75em) {
+
+	/* hogere rode balk, ruimte tussen logo en menu */
+	header {
+		padding: 1.25rem 1.5rem;
+		gap: 2rem;
+		position: static;
+	}
+
+	/* geen hamburger nodig: het menu is altijd zichtbaar */
+	header>button {
+		display: none;
+	}
+
+	/* het logo links en groter */
+	header>a {
+		margin-inline: 0;
+	}
+
+	header>a img {
+		width: 6rem;
+	}
+
+	/* het menu naast het logo, rechts uitgelijnd */
+	nav {
+		display: block;
+		flex-basis: auto;
+		margin-inline-start: auto;
+	}
+
+	/* de links naast elkaar */
+	nav ul {
+		display: flex;
+		gap: 1rem;
+	}
+
+	/* geen lijntjes tussen de links */
+	nav li {
+		border: none;
+	}
+
+	/* een link nooit over twee regels breken
+	   bron: MDN - white-space */
+	nav a {
+		font-size: 1rem;
+		white-space: nowrap;
+	}
+
+	/* footer: ruimte aan de zijkanten */
+	footer {
+		padding-inline: 10%;
+		padding-block: 4rem 6rem;
+	}
+
+}

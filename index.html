@@ -1,21 +1,332 @@
 <!DOCTYPE html>
 <html lang="nl">
-	
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
+	<meta name="author" content="Beyza Deniz">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Howdy FED2526</title>
-	
-	<link href="styles/style.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+	<title>FEBO, gemaakt voor jou en elke dag vers</title>
+
+	<!-- font: Nunito via Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+	<link href="styles/generiek.css" rel="stylesheet">
+	<link href="styles/home.css" rel="stylesheet">
+
+	<link rel="icon" type="image/png" href="images/logoFebo.png">
 </head>
 
 <body>
-	<h1>Howdy FED2526</h1>
+	<a href="#inhoud">Naar de inhoud</a>
+	<header>
+		<!-- hamburger knop, bron: febo.nl-->
+		<button type="button" aria-label="Menu" aria-expanded="false">
+			<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 47.1"
+				style="enable-background:new 0 0 40 47.1;" xml:space="preserve">
+				<g id="burger" transform="translate(0 11)">
+					<g id="Burger_1_">
+						<g id="Group_10" transform="translate(0 47.596)">
+							<path id="Path_6" class="st0" d="M31.8-11.5H8.2c-4.5,0-8.2-3.7-8.2-8.2c0-0.6,0.5-1.2,1.2-1.2c0,0,0,0,0,0h37.7
+                c0.6,0,1.2,0.5,1.2,1.2c0,0,0,0,0,0C40-15.2,36.3-11.5,31.8-11.5z"></path>
+						</g>
+						<g id="Group_11" transform="translate(0 -11)">
+							<path id="Path_7" class="st0" d="M20,0C9,0,0,6.8,0,15.2c0,0.6,0.5,1.2,1.2,1.2c0,0,0,0,0,0h37.7c0.6,0,1.2-0.5,1.2-1.2
+                c0,0,0,0,0,0C40,6.8,31,0,20,0z M11.4,9L9,11.4c-0.5,0.5-1.2,0.5-1.7,0s-0.5-1.2,0-1.7l2.3-2.3c0.5-0.5,1.2-0.4,1.7,0
+                C11.8,7.9,11.8,8.6,11.4,9L11.4,9z M18.5,9l-2.3,2.3c-0.5,0.5-1.2,0.5-1.7,0s-0.5-1.2,0-1.7l0,0l2.3-2.3c0.5-0.5,1.2-0.4,1.7,0
+                C18.9,7.9,18.9,8.6,18.5,9L18.5,9z M25.5,9l-2.3,2.3c-0.5,0.5-1.2,0.5-1.7,0c-0.5-0.5-0.5-1.2,0-1.7l2.3-2.3
+                c0.5-0.5,1.2-0.4,1.7,0C26,7.9,26,8.6,25.5,9L25.5,9z M32,9l-2.3,2.3c-0.5,0.5-1.2,0.5-1.7,0s-0.5-1.2,0-1.7l2.3-2.3
+                c0.5-0.5,1.2-0.5,1.7,0C32.4,7.8,32.4,8.5,32,9C32,9,32,9,32,9L32,9z"></path>
+						</g>
+					</g>
+					<path id="Rectangle_11" class="st0 path_1" d="M1.6,7.8h36.7c0.9,0,1.6,0.7,1.6,1.6l0,0c0,0.9-0.7,1.6-1.6,1.6H1.6C0.7,11,0,10.3,0,9.4
+            l0,0C0,8.5,0.7,7.8,1.6,7.8z"></path>
+					<path id="Rectangle_12" class="st0 path_2" d="M1.6,14.2h36.7c0.9,0,1.6,0.7,1.6,1.6l0,0c0,0.9-0.7,1.6-1.6,1.6H1.6
+            c-0.9,0-1.6-0.7-1.6-1.6l0,0C0,14.9,0.7,14.2,1.6,14.2z"></path>
+					<path id="Rectangle_13" class="st0 path_3" d="M1.6,20.6h36.7c0.9,0,1.6,0.7,1.6,1.6l0,0c0,0.9-0.7,1.6-1.6,1.6H1.6
+            c-0.9,0-1.6-0.7-1.6-1.6l0,0C0,21.4,0.7,20.6,1.6,20.6z"></path>
+				</g>
+			</svg>
+			<img src="images/icons/xmark-solid-full.svg" alt="">
+		</button>
+
+		<!-- febo header logo -->
+		<a href="index.html"><img src="images/FEBOlogo.png" alt="FEBO home"></a>
+
+		<!-- hoofdmenu -->
+		<nav>
+			<ul>
+				<li><a href="#">FEBOLINIES</a></li>
+				<li><a href="#">Werken bij</a></li>
+				<li><a href="#">Franchisenemer worden</a></li>
+				<li><a href="#">Ons verhaal</a></li>
+				<li><a href="#">FEBO Merch</a></li>
+				<li><a href="#">Vind een FEBO</a></li>
+				<li><a href="assortiment.html">Ons assortiment</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="inhoud">
+
+		<!-- zorgt ervoor dat de tekst niet zichtbaar is voor iemand die de website visueel bekijkt, terwijl hij wel beschikbaar blijft voor screenreaders -->
+		<h1 class="visually-hidden">Febo home pagina</h1>
+		<section>
+			<h2>Krokant en klaar thuisbezorgd!</h2>
+
+			<!-- bestelformulier -->
+			<form>
+				<label><input type="radio" name="bestelling" value="bezorgen" checked>Bezorgen</label>
+				<label><input type="radio" name="bestelling" value="afhalen">Afhalen</label>
+				<label>Vul hier je postcode in <input type="text" name="postcode" placeholder="1234 AB"
+						required></label>
+				<button type="submit">Zoek</button>
+				<p><img src="images/icons/circle-check-solid-full.svg" alt=""> Elke dag vers thuisbezorgd!</p>
+			</form>
+		</section>
+
+		<!-- bestel direct: uitklapblok zonder JavaScript
+     bron: MDN - <details>: The Details disclosure element -->
+		<details>
+			<summary>Bestel direct <img src="images/icons/angle-down-solid-full.svg" alt=""></summary>
+			<ul>
+				<li><a href="#">Afhalen</a></li>
+				<li><a href="#">Bezorgen</a></li>
+			</ul>
+		</details>
+
+		<section>
+			<article>
+				<h3>Werken bij FEBO!</h3>
+				<p>Bak jij straks die heerlijke grillburgers? FEBO is een begrip onder de snack en haute frituur
+					liefhebbers. Daarnaast is FEBO een authentiek familiebedrijf met een unieke dagverse productie.</p>
+				<img src="images/home/FEBO-Bezorgservice.jpg" alt="Febo bezorger jongen">
+				<a href="#">Meer over werken bij</a>
+			</article>
+
+			<article>
+				<h3>Zelf ondernemen?</h3>
+				<p>Ben jij ondernemend en zoek je houvast, structuur, extra merkkracht en ondersteuning? Start vandaag
+					jouw FEBO avontuur. FEBO bestaat al meer dan 80 jaar en heeft zich keer op keer bewezen als
+					succesvolle formule.</p>
+				<img src="images/home/kassa.jpg" alt="Medewerkers achter de kassa">
+				<a href="#">Meer over ondernemen</a>
+			</article>
+		</section>
+
+		<section>
+			<h2>Ons assortiment</h2>
+			<p>Dagelijks worden onze kroketten en burgers nog altijd volgens het authentieke recept van Opa de Borst
+				dagvers bereid. Continu zorgen wij ervoor dat de producten nog steeds dezelfde kwaliteit hebben als
+				vroeger.</p>
+			<ul>
+				<li>
+					<article>
+						<h3>Verse FEBO Frites</h3>
+						<p>Frites van Zeeuwse aardappelen, speciaal door ons...</p>
+						<img src="images/home/Frites.png" alt="Frietjes">
+						<a href="#">Product informatie</a>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<h3>Kroketten</h3>
+						<p>Krokant banket van romige ragout, gemaakt van...</p>
+						<img src="images/home/kroketten.png" alt="Kroketten">
+						<a href="#">Product informatie</a>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<h3>Milkshake</h3>
+						<p>Romige shake van echte melk, volgens eigen receptuur...</p>
+						<img src="images/home/milkshake.png" alt="Aardbei milkshake">
+						<a href="#">Product informatie</a>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<h3>Grillburger</h3>
+						<p>Van 100% Nederlands rund- of kippenvlees met...</p>
+						<img src="images/home/Grillburger.png" alt="Burgers">
+						<a href="#">Product informatie</a>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<h3>Snacks</h3>
+						<p>Divers assortiment banket uit eigen productiekeuken en naar...</p>
+						<img src="images/home/Kaassouffle.png" alt="Kaassouffle">
+						<a href="#">Product informatie</a>
+					</article>
+				</li>
+			</ul>
+		</section>
+
+
+		<section>
+			<h2>Elke dag</h2>
+			<h3>Vers gemaakt!</h3>
+			<p>Dagelijks starten wij ’s ochtends heel vroeg met het maken van een ambachtelijke bouillon gemaakt van
+				verse groenten om vervolgens een ragout te maken van het beste kwaliteitsvlees van 100% Nederlandse
+				runderen uit de buurt. Iedere dag wordt van deze ragout de beroemde FEBO kroket gemaakt. Onze kroketten
+				zijn dagvers en worden nooit ingevroren.</p>
+			<a href="assortiment.html">Bekijk onze producten</a>
+			<img src="images/home/vrouw.jpg" alt="Vrouw eet kroket">
+		</section>
+
+		<section>
+			<h2>Nieuw!</h2>
+			<h3>Grillburgersaus</h3>
+			<p>Proef ‘m zelf! Neem de smaak van 50 jaar mee naar huis. Ja hoor. De originele FEBO Grillburgersaus is nu
+				verkrijgbaar in onze FEBO-vestigingen. Dus neem die herkenbare Grillburger-smaak gewoon mee naar huis.
+			</p>
+			<img src="images/home/Grillburgersaus.png" alt="Grillburgersaus">
+		</section>
+
+		<section>
+			<h2>Nieuws</h2>
+			<h3>FEBO Interessant</h3>
+			<article>
+				<h4>FEBO - 50 jaar Grillburger</h4>
+				<time datetime="2026-06-05">5 juni 2026</time>
+				<p>50 jaar Grillburger, Hoera! Feest voor een Èchte FEBO-legende. Sommige smaken raken nooit uit de
+					tijd. Al 50 jaar is de Grillburger een vaste FEBO-favoriet. En zo’n legendarisch moment laten we
+					natuurlijk niet zomaar voorbijgaan… Tijdens het Bacchus Wijnfestival krijgt de Grillburger zín eigen
+					verjaardagsfeestje. Op beide zaterdagen, 6 en 13 juni, staan de huidige Èn de aankomende
+					generatie van de familie De Borst persoonlijk achter de BBQ. Vier het mee. Kom proeven. Neem mee.
+					Vier 50 jaar Grillburger.</p>
+				<img src="images/home/Grillburger-50-jaar.png" alt="Grillburger speciale editie">
+				<a href="#">Lees meer</a>
+			</article>
+
+			<article>
+				<h4>FEBOLINIES</h4>
+				<time datetime="2026-06-01">1 juni 2026</time>
+				<p>FEBO heeft iets nieuws voor de échte snackfans. Spaar bij FEBO-bestelling in je winkel voor gratis
+					snacks, acties en goodies. Elke euro is een punt waard.
+					Heb je genoeg punten? Dan trakteren wij op jouw favoriete snack. Als FEBOLINIES lid krijg je als
+					eerste toegang tot nieuwe snacks, merch en speciale kortingen.</p>
+				<img src="images/home/Febolinies.png" alt="Mobiel met Febo app">
+				<a href="#">Lees meer</a>
+			</article>
+
+			<article>
+				<h4>FEBO Amstelveen is weer open</h4>
+				<time datetime="2025-06-24">24 juni 2025</time>
+				<p>FEBO Amstelveen is weer open! Na een verbouwing sinds 21 maart zijn we terug – en mooier dan ooit!
+					Onze vernieuwde vestiging in Amstelveen is helemaal klaar om jullie weer te ontvangen. Of je nou
+					langskomt voor een snelle lunch, een lekker tussendoortje of omdat je geen zin hebt om te koken: wij
+					staan voor je klaar met de lekkerste dagvers geproduceerde snacks.</p>
+				<img src="images/home/Amstelveen.jpeg" alt="Feestelijke opening winkel Amstelveen">
+				<a href="#">Lees meer</a>
+			</article>
+		</section>
+	</main>
+
+	<footer>
+		<section>
+			<h3>Contact</h3>
+			<ul>
+				<li>
+					<img src="images/icons/location-dot-solid-full.svg" alt="">
+					<p>Processorstraat 21<br>1033 NZ Amsterdam</p>
+				</li>
+
+				<li><img src="images/icons/phone-solid-full.svg" alt="">
+					<a href="tel:020-6328555">020-6328555</a>
+				</li>
+
+				<li><img src="images/icons/envelope-solid-full.svg" alt="">
+					<a href="mailto:info@febo.nl">info@febo.nl</a>
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<h3>Contact FEBO merch</h3>
+			<ul>
+				<li>
+					<img src="images/icons/envelope-solid-full.svg" alt="">
+					<a href="mailto:shop@febo.nl">shop@febo.nl</a>
+				</li>
+				<li><a href="#">Retourneren</a></li>
+			</ul>
+		</section>
+
+		<section>
+			<h3>Pagina's</h3>
+			<ul>
+				<li>
+					<a href="#">Disclaimer</a>
+				</li>
+				<li>
+					<a href="#">Interessant</a>
+				</li>
+				<li>
+					<a href="#">Shop</a>
+				</li>
+				<li>
+					<a href="#">Ons verhaal</a>
+				</li>
+				<li>
+					<a href="#">Mijn Febo</a>
+				</li>
+			</ul>
+		</section>
+
+		<section>
+
+			<h3>Social media</h3>
+			<ul>
+				<li>
+					<a href="https://www.facebook.com/VERSvanFEBO">
+						<img src="images/social-media/facebook-f-brands-solid-full.svg" alt="Facebook">
+					</a>
+				</li>
+				<li>
+					<a href="https://x.com/febo_vers">
+						<img src="images/social-media/x-twitter-brands-solid-full.svg" alt="Twitter">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/febo.nl/">
+						<img src="images/social-media/instagram-logo-fill-svgrepo-com.svg" alt="Instagram">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/company/febo-beheer/">
+						<img src="images/social-media/linkedin-in-brands-solid-full.svg" alt="Linkedin">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/@febodelekkerste">
+						<img src="images/social-media/youtube-brands-solid-full.svg" alt="YouTube">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.tiktok.com/@febo_nl">
+						<img src="images/social-media/tiktok-brands-solid-full.svg" alt="TikTok">
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<p>Copyright © 2026 FEBO</p>
+		<a href="#">Disclaimer</a> <a href="#">Privacy & Cookies</a> <a href="#">Contact</a>
+	</footer>
+
 
 	<script defer src="scripts/script.js"></script>
 </body>
-	
+
 </html>
