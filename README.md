@@ -40,11 +40,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Homepagina  
-  <img src="readme-images/Homepagina.jpeg" width="375px" alt="Homepagina small screen">
+  <img src="images/readme-images/Homepagina.jpeg" width="375px" alt="Homepagina small screen">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   Ons assortiment
-  <img src="readme-images/Assortiment.jpeg" width="375px" alt="Assortiment pagina">
+  <img src="images/readme-images/Assortiment.jpeg" width="375px" alt="Assortiment pagina">
  
 </details>
 
@@ -54,11 +54,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 <details>
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
-<img src="readme-images/WCAG1.JPG" width="375px" alt="WCAG checklist pagina 1">
-<img src="readme-images/WCAG2.JPG" width="375px" alt="WCAG checklist pagina 2">
-<img src="readme-images/WCAG3.JPG" width="375px" alt="WCAG checklist pagina 3">
-<img src="readme-images/WCAG4.JPG" width="375px" alt="WCAG checklist pagina 4">
-<img src="readme-images/WCAG5.JPG" width="375px" alt="WCAG checklist pagina 5">
+<img src="images/readme-images/WCAG1.JPG" width="375px" alt="WCAG checklist pagina 1">
+<img src="images/readme-images/WCAG2.JPG" width="375px" alt="WCAG checklist pagina 2">
+<img src="images/readme-images/WCAG3.JPG" width="375px" alt="WCAG checklist pagina 3">
+<img src="images/readme-images/WCAG4.JPG" width="375px" alt="WCAG checklist pagina 4">
+<img src="images/readme-images/WCAG5.JPG" width="375px" alt="WCAG checklist pagina 5">
 
 
 
@@ -66,31 +66,32 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Lijst met je bevindingen die in de test naar voren kwamen:
 
   Test 1 – febo.nl
-  Geen skip link en geen zichtbare focusstijl
-  Geen h1, niveaus overgeslagen (h2 → h4)
-  Vega-icoon zonder alt; nergens een lege alt voor decoratieve afbeeldingen
-  Hamburger-menuknop is een div en geen button; info-icoon niet met het toetsenbord bereikbaar en maar 21 × 25px
-  Links naar Google Maps en vestigingen openen in een nieuw tabblad zonder melding
-  Wit op FEBO-rood: contrast 4,42:1 (eis 4,5:1)
-  W3C-validator: veel errors, o.a. margin-bottom: px en div binnen span; ook errors in de Console
+
+  - Geen skip link en geen zichtbare focusstijl
+  - Geen h1, niveaus overgeslagen (h2 → h4)
+  - Vega-icoon zonder alt; nergens een lege alt voor decoratieve afbeeldingen
+  - Hamburger-menuknop is een div en geen button; info-icoon niet met het toetsenbord bereikbaar en maar 21 × 25px
+  - Links naar Google Maps en vestigingen openen in een nieuw tabblad zonder melding
+  - Wit op FEBO-rood: contrast 4,42:1 (eis 4,5:1)
+  - W3C-validator: veel errors, o.a. margin-bottom: px en div binnen span; ook errors in de Console
 
   Test 2 – mijn site: wat ik heb verbeterd na de test
 
-  Skip link toegevoegd
-  De twee links “Meer informatie” uniek gemaakt
-  Menu op 200% zoom scrollbaar gemaakt (height: calc(100dvh - 4rem) en overflow-y: auto)
-  Info-knop: padding: 0.5 zonder eenheid → 0.5rem, tikgebied ongeveer 40px
-  Kaassoufflé een alt gegeven
-  Foto’s van de kaarten even hoog gemaakt in landscape
-  Milkshake-error opgelost (ik had dezelfde afbeeldingen in meerdere mappen), 0 errors in de Console
+  - Skip link toegevoegd
+  - De twee links “Meer informatie” uniek gemaakt
+  - Menu op 200% zoom scrollbaar gemaakt (height: calc(100dvh - 4rem) en overflow-y: auto)
+  - Info-knop: padding: 0.5 zonder eenheid → 0.5rem, tikgebied ongeveer 40px
+  - Kaassoufflé een alt gegeven
+  - Foto’s van de kaarten even hoog gemaakt in landscape
+  - Milkshake-error opgelost (ik had dezelfde afbeeldingen in meerdere mappen), 0 errors in de Console
 
   Wat al goed was:
 
-  één h1
-  alle afbeeldingen hebben een (lege) alt
-  de menuknop is een button met aria-expanded
-  dark mode
-  prefers-reduced-motion
+  - één h1
+  - alle afbeeldingen hebben een (lege) alt
+  - de menuknop is een button met aria-expanded
+  - dark mode
+  - prefers-reduced-motion
 
 </details>
 
@@ -102,10 +103,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
   ### de hele pagina: 
-  <img src="readme-images/Breakdownschets1.png" width="375px" alt="breakdown van de hele pagina">
+  <img src="images/readme-images/Breakdownschets1.png" width="375px" alt="breakdown van de hele pagina">
 
   ### dynamisch deel (bijv menu): 
-  <img src="readme-images/Breakdownschets2.png" width="375px" alt="breakdown van een dynamisch deel">
+  <img src="images/readme-images/Breakdownschets2.png" width="375px" alt="breakdown van een dynamisch deel">
 
 
 </details>
@@ -216,22 +217,23 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   Mijn homepagina op een klein scherm
-  <img src="readme-images/uitkomsthomepagina" width="375px" alt="Homepagina op een mobiele scherm">
+  <img src="images/readme-images/uitkomsthomepagina.png" width="375px" alt="Homepagina op een mobiele scherm">
 
   Mijn homepagina op een groot scherm
-  <img src="readme-images/uitkomsthomelargescreen.png" width="750px" alt="Homepagina op een laptop scherm">
+  <img src="images/readme-images/uitkomsthomelargescreen.png" width="750px" alt="Homepagina op een laptop scherm">
 
   Mijn assortimentpagina op een klein scherm
-  <img src="readme-images/uitkomstassortimentpagina.png" width="375px" alt="Assortimentpagina op een mobiele scherm">
+  <img src="images/readme-images/uitkomstassortimentpagina.png" width="375px" alt="Assortimentpagina op een mobiele scherm">
 
   Mijn assortimentpagina op een groot scherm
-  <img src="readme-images/uitkomstassortimentlarge.png" width="750px" alt="Assortimentpagina op een laptop scherm">
+  <img src="images/readme-images/uitkomstassortimentlarge.png" width="750px" alt="Assortimentpagina op een laptop scherm">
 
   De hamburger wordt platgedrukt, net zoals hoe het eruit ziet als je een hamburger zou eten
-  <img src="readme-images/hamburgerplatgedrukt.png" width="375px" alt="">
+  <img src="images/readme-images/hamburgerplatgedrukt.png" width="375px" alt="">
 
   Dark modus 
-   <img src="readme-images/darkmode.png" width="375px" alt="Dark modus van mobiele scherm">
+  
+   <img src="images/readme-images/darkmode.png" width="375px" alt="Dark modus van mobiele scherm">
 
 
   ### Dit ging goed/Heb ik geleerd: 
@@ -314,5 +316,4 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   **AI en andere hulp**
   33. Claude (Anthropic) – uitleg en hulp bij: de opbouw en het opsplitsen van mijn CSS, de footer, de tabbladen Bezorgen/Afhalen, Bestel direct met details, het menu (JavaScript met aria-expanded en Escape), de micro-interactie, contrast, de carousels, de skip link, het voorbereiden en uitleggen van de toegankelijkheidstest, en het opsporen van fouten (o.a. menu niet scrollbaar op 200%, padding zonder eenheid, afbeeldingen die niet laadden door iCloud). Ik heb de code zelf getypt, aangepast en getest.
-  34. Hulp van iemand anders bij de eerste opzet van mijn CSS; daarna heb ik mijn CSS zelf opnieuw geschreven.
 </details>
